@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		DC94FD7D28B765980053EEFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94FD7C28B765980053EEFC /* AppDelegate.swift */; };
 		DC94FD7F28B765980053EEFC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94FD7E28B765980053EEFC /* SceneDelegate.swift */; };
-		DC94FD8128B765980053EEFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94FD8028B765980053EEFC /* ViewController.swift */; };
-		DC94FD8428B765980053EEFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC94FD8228B765980053EEFC /* Main.storyboard */; };
+		DC94FD8128B765980053EEFC /* HomeWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94FD8028B765980053EEFC /* HomeWeatherViewController.swift */; };
 		DC94FD8628B7659A0053EEFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC94FD8528B7659A0053EEFC /* Assets.xcassets */; };
 		DC94FD8928B7659A0053EEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC94FD8728B7659A0053EEFC /* LaunchScreen.storyboard */; };
+		DCF8581428D77E8C00B3A86F /* HomeWeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581328D77E8C00B3A86F /* HomeWeatherHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DC94FD7928B765980053EEFC /* Good Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC94FD7C28B765980053EEFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC94FD7E28B765980053EEFC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DC94FD8028B765980053EEFC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DC94FD8328B765980053EEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC94FD8028B765980053EEFC /* HomeWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherViewController.swift; sourceTree = "<group>"; };
 		DC94FD8528B7659A0053EEFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC94FD8828B7659A0053EEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC94FD8A28B7659A0053EEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCF8581328D77E8C00B3A86F /* HomeWeatherHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,63 @@
 		DC94FD7B28B765980053EEFC /* Good Weather */ = {
 			isa = PBXGroup;
 			children = (
-				DC94FD7C28B765980053EEFC /* AppDelegate.swift */,
-				DC94FD7E28B765980053EEFC /* SceneDelegate.swift */,
-				DC94FD8028B765980053EEFC /* ViewController.swift */,
-				DC94FD8228B765980053EEFC /* Main.storyboard */,
-				DC94FD8528B7659A0053EEFC /* Assets.xcassets */,
-				DC94FD8728B7659A0053EEFC /* LaunchScreen.storyboard */,
+				DC94FD9828B777660053EEFC /* Managers */,
+				DC94FD9728B777600053EEFC /* Resources */,
+				DC94FD9628B7775B0053EEFC /* ViewModels */,
+				DC94FD9528B777550053EEFC /* Views */,
+				DC94FD9428B7774A0053EEFC /* Controllers */,
+				DC94FD9328B777430053EEFC /* Models */,
 				DC94FD8A28B7659A0053EEFC /* Info.plist */,
 			);
 			path = "Good Weather";
+			sourceTree = "<group>";
+		};
+		DC94FD9328B777430053EEFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DC94FD9428B7774A0053EEFC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC94FD8028B765980053EEFC /* HomeWeatherViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DC94FD9528B777550053EEFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DCF8581328D77E8C00B3A86F /* HomeWeatherHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC94FD9628B7775B0053EEFC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DC94FD9728B777600053EEFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DC94FD8528B7659A0053EEFC /* Assets.xcassets */,
+				DC94FD8728B7659A0053EEFC /* LaunchScreen.storyboard */,
+				DC94FD7C28B765980053EEFC /* AppDelegate.swift */,
+				DC94FD7E28B765980053EEFC /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DC94FD9828B777660053EEFC /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +175,6 @@
 			files = (
 				DC94FD8928B7659A0053EEFC /* LaunchScreen.storyboard in Resources */,
 				DC94FD8628B7659A0053EEFC /* Assets.xcassets in Resources */,
-				DC94FD8428B765980053EEFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +185,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC94FD8128B765980053EEFC /* ViewController.swift in Sources */,
+				DC94FD8128B765980053EEFC /* HomeWeatherViewController.swift in Sources */,
 				DC94FD7D28B765980053EEFC /* AppDelegate.swift in Sources */,
 				DC94FD7F28B765980053EEFC /* SceneDelegate.swift in Sources */,
+				DCF8581428D77E8C00B3A86F /* HomeWeatherHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DC94FD8228B765980053EEFC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DC94FD8328B765980053EEFC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DC94FD8728B7659A0053EEFC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

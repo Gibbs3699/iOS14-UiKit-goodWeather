@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScence = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScence)
         
-        let vc = ViewController()
+        let vc = HomeWeatherViewController()
         window.rootViewController = vc
         window.makeKeyAndVisible()
         
