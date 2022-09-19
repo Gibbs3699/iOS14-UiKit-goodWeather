@@ -12,7 +12,8 @@
 		DC94FD8128B765980053EEFC /* HomeWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC94FD8028B765980053EEFC /* HomeWeatherViewController.swift */; };
 		DC94FD8628B7659A0053EEFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC94FD8528B7659A0053EEFC /* Assets.xcassets */; };
 		DC94FD8928B7659A0053EEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC94FD8728B7659A0053EEFC /* LaunchScreen.storyboard */; };
-		DCF8581428D77E8C00B3A86F /* HomeWeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581328D77E8C00B3A86F /* HomeWeatherHeaderView.swift */; };
+		DCF8581628D7805400B3A86F /* HomeWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581528D7805400B3A86F /* HomeWeatherTableViewCell.swift */; };
+		DCF8581828D7825700B3A86F /* HomeWeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581728D7825700B3A86F /* HomeWeatherHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		DC94FD8528B7659A0053EEFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC94FD8828B7659A0053EEFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC94FD8A28B7659A0053EEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCF8581328D77E8C00B3A86F /* HomeWeatherHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherHeaderView.swift; sourceTree = "<group>"; };
+		DCF8581528D7805400B3A86F /* HomeWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		DCF8581728D7825700B3A86F /* HomeWeatherHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,8 @@
 		DC94FD9528B777550053EEFC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DCF8581328D77E8C00B3A86F /* HomeWeatherHeaderView.swift */,
+				DCF8581528D7805400B3A86F /* HomeWeatherTableViewCell.swift */,
+				DCF8581728D7825700B3A86F /* HomeWeatherHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,10 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF8581828D7825700B3A86F /* HomeWeatherHeaderView.swift in Sources */,
 				DC94FD8128B765980053EEFC /* HomeWeatherViewController.swift in Sources */,
 				DC94FD7D28B765980053EEFC /* AppDelegate.swift in Sources */,
 				DC94FD7F28B765980053EEFC /* SceneDelegate.swift in Sources */,
-				DCF8581428D77E8C00B3A86F /* HomeWeatherHeaderView.swift in Sources */,
+				DCF8581628D7805400B3A86F /* HomeWeatherTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,9 +9,8 @@ import UIKit
 
 class HomeWeatherViewController: UIViewController {
     
-    lazy private var gradientBackground: CAGradientLayer = {
+    private let gradientBackground: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
         gradientLayer.colors = [
             UIColor(red: 1, green: 1, blue: 0.867, alpha: 1).cgColor,
             UIColor(red: 1, green: 0.835, blue: 0.898, alpha: 1).cgColor
@@ -19,27 +18,68 @@ class HomeWeatherViewController: UIViewController {
         return gradientLayer
     }()
     
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .white
-//        tableView.register(NewsHeaderView.self, forHeaderFooterViewReuseIdentifier: NewsHeaderView.identifier)
-//        tableView.register(NewsStoryTableViewCell.self, forCellReuseIdentifier: NewsStoryTableViewCell.identifier)
+        tableView.backgroundColor = .clear
+        tableView.register(HomeWeatherTableViewCell.self, forCellReuseIdentifier: HomeWeatherTableViewCell.identifier)
         return tableView
+    }()
+    
+    private let homeWeatherHeaderView: HomeWeatherHeaderView = {
+        let homeWeatherHeaderView = HomeWeatherHeaderView()
+        homeWeatherHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        return homeWeatherHeaderView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupConstraints()
+        setupViews()
+        setUpTableView()
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
 
-    private func setupConstraints() {
+    /// Sets up tableview
+    private func setUpTableView() {
+        view.addSubview(tableView)
         
-        view.layer.addSublayer(gradientBackground)
+        tableView.tableHeaderView = UIView(
+            frame: CGRect(x: 0, y: homeWeatherHeaderView.frame.height , width: view.frame.width, height: view.frame.height/1.5)
+        )
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
+    
+    private func setupViews() {
+        view.layer.addSublayer(gradientBackground)
+        gradientBackground.frame = view.bounds
+        
+        view.addSubview(homeWeatherHeaderView)
+        homeWeatherHeaderView.frame = CGRect(x: 0, y: 0, width: view.frame.width/1.1, height: view.frame.height/1.3)
+        homeWeatherHeaderView.center = view.center
+    }
+}
+
+extension HomeWeatherViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeWeatherTableViewCell.identifier, for: indexPath)
+        
+        cell.textLabel?.text = "test"
+        cell.backgroundColor = .clear
+        return cell
+    }
+    
 }
 
