@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeWeatherViewController: UIViewController {
+class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     private let gradientBackground: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
@@ -31,19 +32,62 @@ class HomeWeatherViewController: UIViewController {
         return homeWeatherHeaderView
     }()
     
+    private var locationManager = CLLocationManager()
+    private var currentLoc: CLLocation?
+    private var latitude : CLLocationDegrees!
+    private var longitude: CLLocationDegrees!
+    
+    let userDefaults =  UserDefaults.standard
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
         setUpTableView()
+        setupCoreLocation()
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-
-    /// Sets up tableview
+    
+    private func setupCoreLocation() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
+        manager.delegate = nil
+        
+        let location = locations[0].coordinate
+        latitude = location.latitude
+        longitude = location.longitude
+        
+        let userDefaults =  UserDefaults.standard
+        userDefaults.set(latitude, forKey: "lat")
+        userDefaults.set(longitude, forKey: "lon")
+        
+        fetchCurrentCoordinates(lat: latitude.description, lon: longitude.description)
+    
+    }
+    
+    private func fetchCurrentCoordinates(lat: String, lon: String) {
+        APICaller.share.getCurrentLocationWeather(lat: lat, lon: lon) { [weak self] result in
+            switch result {
+            case .success(let weather):
+                self?.homeWeatherHeaderView.configure(with: CurrentWeatherViewModel(conditionId: weather.weather[0].id, cityName: weather.name, temperature: weather.main.temp, humidity: weather.main.humidity, conditionDescription: weather.weather[0].description, country: weather.sys.country))
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     private func setUpTableView() {
         view.addSubview(tableView)
         
@@ -60,8 +104,8 @@ class HomeWeatherViewController: UIViewController {
         gradientBackground.frame = view.bounds
         
         view.addSubview(homeWeatherHeaderView)
-        homeWeatherHeaderView.frame = CGRect(x: 0, y: 0, width: view.frame.width/1.1, height: view.frame.height/1.3)
-        homeWeatherHeaderView.center = view.center
+        homeWeatherHeaderView.frame = CGRect(x: 20, y: view.safeAreaInsets.top+70, width: view.frame.width/1.1, height: view.frame.height/1.3)
+        
     }
 }
 

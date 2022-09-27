@@ -14,6 +14,17 @@
 		DC94FD8928B7659A0053EEFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC94FD8728B7659A0053EEFC /* LaunchScreen.storyboard */; };
 		DCF8581628D7805400B3A86F /* HomeWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581528D7805400B3A86F /* HomeWeatherTableViewCell.swift */; };
 		DCF8581828D7825700B3A86F /* HomeWeatherHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581728D7825700B3A86F /* HomeWeatherHeaderView.swift */; };
+		DCF8581C28D8513400B3A86F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581B28D8513400B3A86F /* APICaller.swift */; };
+		DCF8581E28D8615000B3A86F /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581D28D8615000B3A86F /* CurrentWeather.swift */; };
+		DCF8582028D8659900B3A86F /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF8581F28D8659900B3A86F /* CurrentWeatherViewModel.swift */; };
+		DCF8582928D86BB500B3A86F /* drizzle.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF8582228D86BB400B3A86F /* drizzle.json */; };
+		DCF8582A28D86BB500B3A86F /* clear.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF8582328D86BB400B3A86F /* clear.json */; };
+		DCF8582B28D86BB500B3A86F /* atmosphere.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF8582428D86BB500B3A86F /* atmosphere.json */; };
+		DCF8582C28D86BB500B3A86F /* rain.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF8582528D86BB500B3A86F /* rain.json */; };
+		DCF8582D28D86BB500B3A86F /* thunderstorm.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF8582628D86BB500B3A86F /* thunderstorm.json */; };
+		DCF8582E28D86BB500B3A86F /* snow.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF8582728D86BB500B3A86F /* snow.json */; };
+		DCF8582F28D86BB500B3A86F /* clounds.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF8582828D86BB500B3A86F /* clounds.json */; };
+		DCF8583228D8731700B3A86F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DCF8583128D8731700B3A86F /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +37,16 @@
 		DC94FD8A28B7659A0053EEFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCF8581528D7805400B3A86F /* HomeWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		DCF8581728D7825700B3A86F /* HomeWeatherHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherHeaderView.swift; sourceTree = "<group>"; };
+		DCF8581B28D8513400B3A86F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		DCF8581D28D8615000B3A86F /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		DCF8581F28D8659900B3A86F /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
+		DCF8582228D86BB400B3A86F /* drizzle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = drizzle.json; path = Assets/drizzle.json; sourceTree = SOURCE_ROOT; };
+		DCF8582328D86BB400B3A86F /* clear.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = clear.json; path = Assets/clear.json; sourceTree = SOURCE_ROOT; };
+		DCF8582428D86BB500B3A86F /* atmosphere.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = atmosphere.json; path = Assets/atmosphere.json; sourceTree = SOURCE_ROOT; };
+		DCF8582528D86BB500B3A86F /* rain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = rain.json; path = Assets/rain.json; sourceTree = SOURCE_ROOT; };
+		DCF8582628D86BB500B3A86F /* thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = thunderstorm.json; path = Assets/thunderstorm.json; sourceTree = SOURCE_ROOT; };
+		DCF8582728D86BB500B3A86F /* snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = snow.json; path = Assets/snow.json; sourceTree = SOURCE_ROOT; };
+		DCF8582828D86BB500B3A86F /* clounds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = clounds.json; path = Assets/clounds.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF8583228D8731700B3A86F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,11 +80,11 @@
 		DC94FD7B28B765980053EEFC /* Good Weather */ = {
 			isa = PBXGroup;
 			children = (
-				DC94FD9828B777660053EEFC /* Managers */,
 				DC94FD9728B777600053EEFC /* Resources */,
 				DC94FD9628B7775B0053EEFC /* ViewModels */,
 				DC94FD9528B777550053EEFC /* Views */,
 				DC94FD9428B7774A0053EEFC /* Controllers */,
+				DC94FD9828B777660053EEFC /* Managers */,
 				DC94FD9328B777430053EEFC /* Models */,
 				DC94FD8A28B7659A0053EEFC /* Info.plist */,
 			);
@@ -72,6 +94,7 @@
 		DC94FD9328B777430053EEFC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DCF8581D28D8615000B3A86F /* CurrentWeather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,6 +119,7 @@
 		DC94FD9628B7775B0053EEFC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DCF8581F28D8659900B3A86F /* CurrentWeatherViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -103,6 +127,7 @@
 		DC94FD9728B777600053EEFC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DCF8582128D86B9400B3A86F /* Lotties */,
 				DC94FD8528B7659A0053EEFC /* Assets.xcassets */,
 				DC94FD8728B7659A0053EEFC /* LaunchScreen.storyboard */,
 				DC94FD7C28B765980053EEFC /* AppDelegate.swift */,
@@ -114,8 +139,23 @@
 		DC94FD9828B777660053EEFC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				DCF8581B28D8513400B3A86F /* APICaller.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		DCF8582128D86B9400B3A86F /* Lotties */ = {
+			isa = PBXGroup;
+			children = (
+				DCF8582428D86BB500B3A86F /* atmosphere.json */,
+				DCF8582328D86BB400B3A86F /* clear.json */,
+				DCF8582828D86BB500B3A86F /* clounds.json */,
+				DCF8582228D86BB400B3A86F /* drizzle.json */,
+				DCF8582528D86BB500B3A86F /* rain.json */,
+				DCF8582728D86BB500B3A86F /* snow.json */,
+				DCF8582628D86BB500B3A86F /* thunderstorm.json */,
+			);
+			path = Lotties;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +174,9 @@
 			dependencies = (
 			);
 			name = "Good Weather";
+			packageProductDependencies = (
+				DCF8583128D8731700B3A86F /* Lottie */,
+			);
 			productName = "Good Weather";
 			productReference = DC94FD7928B765980053EEFC /* Good Weather.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +205,9 @@
 				Base,
 			);
 			mainGroup = DC94FD7028B765980053EEFC;
+			packageReferences = (
+				DCF8583028D8731700B3A86F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = DC94FD7A28B765980053EEFC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -176,8 +222,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF8582E28D86BB500B3A86F /* snow.json in Resources */,
 				DC94FD8928B7659A0053EEFC /* LaunchScreen.storyboard in Resources */,
+				DCF8582C28D86BB500B3A86F /* rain.json in Resources */,
+				DCF8582A28D86BB500B3A86F /* clear.json in Resources */,
+				DCF8582928D86BB500B3A86F /* drizzle.json in Resources */,
+				DCF8582D28D86BB500B3A86F /* thunderstorm.json in Resources */,
+				DCF8582B28D86BB500B3A86F /* atmosphere.json in Resources */,
 				DC94FD8628B7659A0053EEFC /* Assets.xcassets in Resources */,
+				DCF8582F28D86BB500B3A86F /* clounds.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,10 +242,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCF8581828D7825700B3A86F /* HomeWeatherHeaderView.swift in Sources */,
+				DCF8581C28D8513400B3A86F /* APICaller.swift in Sources */,
 				DC94FD8128B765980053EEFC /* HomeWeatherViewController.swift in Sources */,
+				DCF8581E28D8615000B3A86F /* CurrentWeather.swift in Sources */,
 				DC94FD7D28B765980053EEFC /* AppDelegate.swift in Sources */,
 				DC94FD7F28B765980053EEFC /* SceneDelegate.swift in Sources */,
 				DCF8581628D7805400B3A86F /* HomeWeatherTableViewCell.swift in Sources */,
+				DCF8582028D8659900B3A86F /* CurrentWeatherViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +390,7 @@
 				DEVELOPMENT_TEAM = 9786TSAYF2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Good Weather/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to get the current weather for where you live.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -362,6 +419,7 @@
 				DEVELOPMENT_TEAM = 9786TSAYF2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Good Weather/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to get the current weather for where you live.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -402,6 +460,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DCF8583028D8731700B3A86F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DCF8583128D8731700B3A86F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DCF8583028D8731700B3A86F /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC94FD7128B765980053EEFC /* Project object */;
 }
