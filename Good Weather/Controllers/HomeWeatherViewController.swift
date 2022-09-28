@@ -10,11 +10,11 @@ import CoreLocation
 
 class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
     
-    private let gradientBackground: CAGradientLayer = {
+    private let background: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(red: 1, green: 1, blue: 0.867, alpha: 1).cgColor,
-            UIColor(red: 1, green: 0.835, blue: 0.898, alpha: 1).cgColor
+            UIColor(red: 0.58, green: 0.702, blue: 0.992, alpha: 1).cgColor,
+            UIColor(red: 0.6, green: 0.996, blue: 1, alpha: 1).cgColor
         ]
         return gradientLayer
     }()
@@ -43,10 +43,10 @@ class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSearchController()
         setupViews()
         setUpTableView()
         setupCoreLocation()
-        
     }
     
     override func viewDidLayoutSubviews() {
@@ -59,6 +59,12 @@ class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+    
+    private func setupSearchController() {
+        let searchVC = UISearchController()
+        searchVC.searchResultsUpdater = self
+        navigationItem.searchController = searchVC
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -100,12 +106,21 @@ class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func setupViews() {
-        view.layer.addSublayer(gradientBackground)
-        gradientBackground.frame = view.bounds
+        view.layer.addSublayer(background)
+        background.frame = view.bounds
         
         view.addSubview(homeWeatherHeaderView)
-        homeWeatherHeaderView.frame = CGRect(x: 20, y: view.safeAreaInsets.top+70, width: view.frame.width/1.1, height: view.frame.height/1.3)
         
+    }
+}
+
+extension HomeWeatherViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query = searchController.searchBar.text else {
+            return
+        }
+    
+        print("current query --> \(query)")
     }
 }
 

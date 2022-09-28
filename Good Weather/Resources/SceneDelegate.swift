@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScence)
         
         let vc = HomeWeatherViewController()
+        let navVC = UINavigationController(rootViewController: vc)
         window.rootViewController = vc
         window.makeKeyAndVisible()
         
