@@ -13,8 +13,8 @@ class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
     private let background: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(red: 0.58, green: 0.702, blue: 0.992, alpha: 1).cgColor,
-            UIColor(red: 0.6, green: 0.996, blue: 1, alpha: 1).cgColor
+            UIColor(red: 0.604, green: 1, blue: 0.62, alpha: 1).cgColor,
+            UIColor(red: 0.266, green: 0.553, blue: 0.983, alpha: 1).cgColor
         ]
         return gradientLayer
     }()
@@ -24,6 +24,12 @@ class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
         tableView.backgroundColor = .clear
         tableView.register(HomeWeatherTableViewCell.self, forCellReuseIdentifier: HomeWeatherTableViewCell.identifier)
         return tableView
+    }()
+    
+    private let homeWeatherContentView: HomeWeatherContentView = {
+        let homeWeatherContentView = HomeWeatherContentView()
+        homeWeatherContentView.translatesAutoresizingMaskIntoConstraints = false
+        return homeWeatherContentView
     }()
     
     private let homeWeatherHeaderView: HomeWeatherHeaderView = {
@@ -87,7 +93,7 @@ class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
         APICaller.share.getCurrentLocationWeather(lat: lat, lon: lon) { [weak self] result in
             switch result {
             case .success(let weather):
-                self?.homeWeatherHeaderView.configure(with: CurrentWeatherViewModel(conditionId: weather.weather[0].id, cityName: weather.name, temperature: weather.main.temp, humidity: weather.main.humidity, conditionDescription: weather.weather[0].description, country: weather.sys.country))
+                self?.homeWeatherContentView.configure(with: CurrentWeatherViewModel(conditionId: weather.weather[0].id, cityName: weather.name, temperature: weather.main.temp, humidity: weather.main.humidity, conditionDescription: weather.weather[0].description, country: weather.sys.country))
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -110,6 +116,19 @@ class HomeWeatherViewController: UIViewController, CLLocationManagerDelegate {
         background.frame = view.bounds
         
         view.addSubview(homeWeatherHeaderView)
+        view.addSubview(homeWeatherContentView)
+        
+        NSLayoutConstraint.activate([
+            homeWeatherHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            homeWeatherHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            homeWeatherHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            homeWeatherHeaderView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width-40),
+            homeWeatherHeaderView.heightAnchor.constraint(equalToConstant: 50) ,
+            
+            homeWeatherContentView.topAnchor.constraint(equalTo: homeWeatherHeaderView.bottomAnchor, constant: 20),
+            homeWeatherContentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            homeWeatherContentView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        ])
         
     }
 }
